@@ -47,3 +47,45 @@ sudo systemctl restart apache2
 ![image](https://github.com/user-attachments/assets/abe8d21d-31ba-4cfc-930a-8b00f9eb3d2b)
 
 
+### Configuración de MySQL
+
+-Ahora toca acceder a la consola desde terminal, para esto debes ser "root".
+```console
+sudo mysql
+```
+![image](https://github.com/user-attachments/assets/31fb4489-bb6a-480c-b5f6-ea8ab6f7545e)
+
+-Ahora que ya estamos dentro de la consola, es momento de crear una base de datos llamada "bbdd".
+
+```console
+CREATE DATABASE bbdd;
+```
+![image](https://github.com/user-attachments/assets/1cc22bc1-6245-4255-b9ea-ee68094b9d5a)
+
+-Ahora toca crear el usuario.
+
+```console
+CREATE USER 'usuario'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+```
+
+![image](https://github.com/user-attachments/assets/3bc8a58b-6fc7-42e9-946e-94629947f607)
+
+-Una vez creado, damos todos los privilegios al usuario "localhost".
+```console
+GRANT ALL ON bbdd.* to 'usuario'@'localhost';
+```
+![image](https://github.com/user-attachments/assets/c22feabd-4c83-49f6-a287-c682dc7397bb)
+
+-Y ya concedidos los permisos salimos de la consola.
+
+```console
+exit
+```
+![image](https://github.com/user-attachments/assets/aa7a1d71-32a1-4139-9d8c-0841d307e18e)
+
+-Ahora toca probar si se puede conectar a la base sin privilegios.
+```console
+mysql -u usuario -p
+```
+
+![image](https://github.com/user-attachments/assets/6234d50d-e783-497e-91f4-540b1e7dc437)
