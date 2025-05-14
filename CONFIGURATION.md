@@ -187,8 +187,81 @@ sudo unzip app-web.zip
 ![image](https://github.com/user-attachments/assets/22210cf8-eea4-4ad4-a058-165119ef310c)
 
 
+-Ahora se copia los ficheros a la carpeta de /var/www/html y luego se elimina la carpeta donde hemos hecho el unzip.
 
--Ahora se copia los ficheros a la carpeta de /var/www/html
-sudo unzip owncloud-complete-20240724.zip
+```console
+sudo cp -R app-web/. /var/www/html
+```
+![image](https://github.com/user-attachments/assets/2d8b275c-152b-4158-9eec-43390163435f)
+
+
+```console
+sudo rm -rf app-web/
+```
+![image](https://github.com/user-attachments/assets/c015b17f-4674-4a7a-af2a-b29ca346c84e)
+
+-Ahora tocaría eliminar el fichero de index.html de apache2.
+
+```console
+sudo rm -rf /var/www/html/index.html
+```
+![image](https://github.com/user-attachments/assets/6bc21109-ad24-4ffd-a7c1-2d08a1570f7b)
+
+
+## Aplicar permisos a la aplicación web.
+
+-Aplicaremos permisos al directorio /var/www/html
+
+
+```console
+cd /var/www/html
+```
+
+```console
+sudo chmod -R 775 .
+```
+```console
+sudo chown -R usuario:www-data .
+```
+![image](https://github.com/user-attachments/assets/f6ec6243-f9e5-49fb-ad9b-499f1d1c4d8b)
+
+-Y ahora tocaría entrar en el navegador y entramos a la dirección de http://localhost/ y se configura la cloud.
+
+![image](https://github.com/user-attachments/assets/8a758a78-fa0b-4919-9376-49f0fbf8d0a8)
+
+-La información a poner es la siguiente:
+
+* **usuario:** usuario
+* **contraseña:** password
+* **base de datos:** bbdd
+* **dominio:** localhost
+
+![image](https://github.com/user-attachments/assets/5056b458-fa83-441f-8718-085868d02306)
+![image](https://github.com/user-attachments/assets/bc1d4a45-d86e-4a9b-9770-d8776305a993)
+![image](https://github.com/user-attachments/assets/b05c6cd3-c4b4-40c3-97e8-d3784d7ca0d5)
+
+## Subir archivos a Owncloud
+
+-Ya dentro, subiremos los archivos en carpetas para mantener el espacio organizado.
+Nos dirigiremos al + y en el símbolo de carpeta escribiremos un nombre.
+![image](https://github.com/user-attachments/assets/615a75a2-e187-44a3-a066-b89471324130)
+![image](https://github.com/user-attachments/assets/15a482b6-c472-45a0-b868-35a7602d436e)
+![image](https://github.com/user-attachments/assets/cfd84c3a-81da-4ba5-abe4-4a288e02035f)
+![image](https://github.com/user-attachments/assets/1f2abb3f-cd78-4a3f-8f2d-d760b8d17b28)
+
+-Ahora compartiremos el enlace de la carpeta a otros usuarios, añadiendole una fecha de caducidad por precaución.
+![image](https://github.com/user-attachments/assets/55e292e6-6a78-47a8-ac54-d41c277d0c82)
+
+
+-Crearemos 3 usuarios con roles distintos (admin, editor y visualizador) desde el desplegable. 
+
+![image](https://github.com/user-attachments/assets/d221a223-1251-483a-9141-25f0bb342da3)
+![image](https://github.com/user-attachments/assets/64eb6123-e3b3-4c1d-b053-8a13b5a5d697)
+
+-Una vez creados, procederemos a crear los respectivos grupos y a asignar usuarios dentro de ellos.
+![image](https://github.com/user-attachments/assets/27b646c2-25a1-4221-b208-843a991ee9eb)
+
+![image](https://github.com/user-attachments/assets/99f4cf77-60c5-4e56-bde7-d1dad09bc0ee)
+
 
 
