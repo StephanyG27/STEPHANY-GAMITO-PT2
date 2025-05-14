@@ -137,17 +137,58 @@ sudo apt install -y php7.4-fpm php7.4-common php7.4-mbstring php7.4-xmlrpc php7.
 ```
 ![image](https://github.com/user-attachments/assets/07d454b2-094e-4a90-93b9-48c8ae4b501b)
 
--Ahora se selecciona la versión PHP que desees.
+-Ahora se selecciona la versión PHP que desees, en mi caso escogí el 2.
 
 ```console
 sudo update-alternatives --config php
 ```
-0.![image](https://github.com/user-attachments/assets/8766b20d-a813-43c9-9e48-a48edc995a6e)
+![image](https://github.com/user-attachments/assets/8766b20d-a813-43c9-9e48-a48edc995a6e)
 
+-Ahora toca activar los módulos de apache2.
+
+```console
+sudo a2enmod proxy_fcgi setenvif
+```
+
+```console
+sudo a2enconf php7.4-fpm
+```
+
+![image](https://github.com/user-attachments/assets/27c72968-3b30-4be4-b8d4-ad45fd823ac1)
+
+-Y se reinicia apache2.
+
+```console
+sudo service apache2 restart
+```
+
+## Descompresión del archivo a la carpeta /var/www/html
+
+-Lo primero es ir al directorio de /var/www/html y descomprimir los archivos del zip.
+Es importante cambiar "Baixades" por "Descargas" y "app-web" por el nombre de la carpeta.
+
+```console
+sudo cp ~/Baixades/app-web.zip /var/www/html
+```
+
+![image](https://github.com/user-attachments/assets/8342eaa7-d81d-43c0-b147-9b5201bd8d3c)
+
+-Ahora vamos al directorio /var/www/html y dentro descomprimimos el fichero, cambiando "app-web" al igual que antes.
+
+```console
+cd /var/www/html
+```
+![image](https://github.com/user-attachments/assets/fb40328b-8b2e-4471-99c0-6cbaed02ef5b)
 
 
 ```console
-
+sudo unzip app-web.zip
 ```
+![image](https://github.com/user-attachments/assets/22210cf8-eea4-4ad4-a058-165119ef310c)
+
+
+
+-Ahora se copia los ficheros a la carpeta de /var/www/html
+sudo unzip owncloud-complete-20240724.zip
 
 
