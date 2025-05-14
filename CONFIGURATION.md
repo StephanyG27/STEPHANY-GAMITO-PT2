@@ -89,3 +89,65 @@ mysql -u usuario -p
 ```
 
 ![image](https://github.com/user-attachments/assets/6234d50d-e783-497e-91f4-540b1e7dc437)
+
+
+## Descarga de Owncloud
+
+-He descargado Owncloud desde este link.
+```console
+https://download.owncloud.com/server/stable/owncloud-complete-20240724.zip
+```
+![image](https://github.com/user-attachments/assets/90920df7-79a9-48f1-b72d-7fb5562420ff)
+
+-Una vez descargado el zip, lo primero será instalar los requisitos previos de PPA.
+
+```console
+sudo apt install software-properties-common -y
+```
+![image](https://github.com/user-attachments/assets/ea81d030-eba8-4045-82cf-f68698acb2bf)
+
+-Lo siguiente es la instalación de las herramientas para trabajar con los archivos PPA.
+
+```console
+LC_ALL=C.UTF-8 sudo add-apt-repository ppa:ondrej/php -y
+```
+![image](https://github.com/user-attachments/assets/bb597bf0-1440-4a7a-9c52-5619f3fb2184)
+
+-Ahora se debe volver a actualizar los repositorios.
+
+```console
+sudo apt update
+```
+![image](https://github.com/user-attachments/assets/caf91ffe-d56a-4c5d-b8bb-0b0f874863c2)
+
+-Una vez actualizado, se instala las librerias de PHP en su versión 7.4.
+
+```console
+sudo apt install php7.4 -y
+```
+![image](https://github.com/user-attachments/assets/c36176ec-326b-4097-a6ca-4c11b0e0c4c7)
+
+```console
+sudo apt install -y php libapache2-mod-php7.4
+```
+![image](https://github.com/user-attachments/assets/bd3533ef-9394-4ef4-b818-a1237d2acfd7)
+
+```console
+sudo apt install -y php7.4-fpm php7.4-common php7.4-mbstring php7.4-xmlrpc php7.4-soap php7.4-gd php7.4-xml php7.4-intl php7.4-mysql php7.4-cli php7.4-ldap php7.4-zip php7.4-curl
+```
+![image](https://github.com/user-attachments/assets/07d454b2-094e-4a90-93b9-48c8ae4b501b)
+
+-Ahora se selecciona la versión PHP que desees.
+
+```console
+sudo update-alternatives --config php
+```
+0.![image](https://github.com/user-attachments/assets/8766b20d-a813-43c9-9e48-a48edc995a6e)
+
+
+
+```console
+
+```
+
+
