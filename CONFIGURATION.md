@@ -256,9 +256,11 @@ Nos dirigiremos al + y en el símbolo de carpeta escribiremos un nombre.
 -Crearemos 3 usuarios con roles distintos (admin, editor y visualizador) desde el desplegable. 
 
 ![image](https://github.com/user-attachments/assets/d221a223-1251-483a-9141-25f0bb342da3)
+
 ![image](https://github.com/user-attachments/assets/64eb6123-e3b3-4c1d-b053-8a13b5a5d697)
 
 -Una vez creados, procederemos a crear los respectivos grupos y a asignar usuarios dentro de ellos.
+
 ![image](https://github.com/user-attachments/assets/27b646c2-25a1-4221-b208-843a991ee9eb)
 
 ![image](https://github.com/user-attachments/assets/99f4cf77-60c5-4e56-bde7-d1dad09bc0ee)
